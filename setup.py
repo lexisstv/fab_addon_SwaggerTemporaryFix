@@ -18,7 +18,7 @@ def desc():
 setup(
     name=addon.FULL_ADDON_NAME,
     version=version.VERSION_STRING,
-    url='https://github.com/dpgaspar/flask-appbuilder/',
+    url='https://github.com/lexisstv/fab_addon_SwaggerTemporaryFix/',
     license='BSD',
     author=version.AUTHOR_NAME,
     author_email=version.AUTHOR_EMAIL,
