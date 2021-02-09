@@ -11,5 +11,5 @@ Waiting for this PR: https://github.com/dpgaspar/Flask-AppBuilder/pull/1465
 - Use it:
     On you application add the following key to config.py
 
-    ADDON_MANAGERS = ['fab_addon_SwaggerTemporaryFix.manager.AuditAddOnManager']
+    ADDON_MANAGERS = ['fab_addon_SwaggerTemporaryFix.manager.SwaggerTemporaryFixManager']
 
