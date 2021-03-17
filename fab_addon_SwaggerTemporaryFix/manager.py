@@ -26,6 +26,22 @@ class SwaggerTemporaryFixManager(BaseManager):
         """
             This method is called by AppBuilder when initializing, use it to add you views
         """
+        # OpenApi url fix
+        from flask_appbuilder.api.manager import OpenApi
+
+        def fix_create_api_spec(func):
+            def wrapper_fix(*args, **kwargs):
+                res = func(*args, **kwargs)
+                from flask import url_for
+                api_url = url_for("OpenApi.get", version = args[0] if len(args) > 0 else "").rpartition("/")[0]
+                res.options['servers'] = [{"url": api_url}]
+                return res
+            return wrapper_fix
+
+        OpenApi._create_api_spec = staticmethod(fix_create_api_spec(OpenApi._create_api_spec))
+
+
+        # Register views
         if not self.appbuilder.app.config.get("FAB_ADD_SECURITY_VIEWS", True):
             return
         if self.appbuilder.get_app.config.get("FAB_API_SWAGGER_UI", False):
