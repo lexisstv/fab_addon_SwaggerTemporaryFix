@@ -4,7 +4,7 @@ from flask_appbuilder import BaseView, expose, has_access
 
 class MySwaggerView(BaseView):
 
-    route_base = "/swaggerview"
+    route_base = "/swagger_fixed"
     default_view = "ui"
     openapi_uri = "/api/{}/_openapi"
 

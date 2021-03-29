@@ -13,3 +13,5 @@ Waiting for this PR: https://github.com/dpgaspar/Flask-AppBuilder/pull/1465
 
     ADDON_MANAGERS = ['fab_addon_SwaggerTemporaryFix.manager.SwaggerTemporaryFixManager']
 
+Swagger will be available at /swagger_fixed
+
