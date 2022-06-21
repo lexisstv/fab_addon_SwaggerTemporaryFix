@@ -33,7 +33,7 @@ class SwaggerTemporaryFixManager(BaseManager):
             def wrapper_fix(*args, **kwargs):
                 res = func(*args, **kwargs)
                 from flask import url_for
-                api_url = url_for("OpenApi.get", version = args[0] if len(args) > 0 else "").rpartition("/")[0]
+                api_url = url_for("OpenApi.get", version = args[0] if len(args) > 0 else "").rpartition(OpenApi.route_base)[0]
                 res.options['servers'] = [{"url": api_url}]
                 return res
             return wrapper_fix
